@@ -180,9 +180,7 @@ Then within each Pod template, we specify:
 > randomly generated strings and are non-deterministic by design. 
 > Their labels are a consistent way to identify them and use them.
 > You will see this pattern in Service and Ingress objects soon.
-
-From repo root, run `kubectl apply -f demo/manifests/k8s/backend-deployment.yaml`.
-
+ 
 You can verify if your Deployment is running fine with command  
 `kubectl get deployment/backend --watch`, e.g.
 ```
