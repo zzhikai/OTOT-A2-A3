@@ -325,12 +325,14 @@ For each rule, you can specify a host (in an FQDN) that is used to connect to th
 Under the `http` section, you can specify a set of paths to a set of backends.
 
 ```yaml
-apiVersion: networking.demo.io/v1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: backend
   labels:
     app: backend
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1 
 spec:
   rules:
     - http:
