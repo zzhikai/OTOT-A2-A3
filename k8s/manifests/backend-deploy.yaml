@@ -19,7 +19,7 @@ spec:
           image: zzhikai/app:latest
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 3000
           resources:
             limits:
               cpu: 40m
