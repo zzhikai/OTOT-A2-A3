@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service-zone-aware
+  labels:
+    app: backend-zone-aware
+spec:
+  type: ClusterIP
+
+  selector:
+    app: backend-zone-aware
+  ports:
+    - name: http
+      port: 3000
+      protocol: TCP
+      targetPort: http

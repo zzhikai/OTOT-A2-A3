@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-zone-aware
+  labels:
+    app: backend-zone-aware
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: backend-zone-aware
+  template:
+    metadata:
+      labels:
+        app: backend-zone-aware
+    spec:
+      containers:
+        - name: backend
+          image: zzhikai/app:latest
+          ports:
+            - name: http
+              containerPort: 3000
+          resources:
+            limits:
+              cpu: 40m
+              memory: 100Mi
